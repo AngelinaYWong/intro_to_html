@@ -34,3 +34,30 @@ const nineties = [
     url: 'http://www.cranberries.com/site/'
   }
 ]
+
+document.addEventListener('DOMContentLoaded', showButton)
+
+function showButton() {
+  const headers = document.getElementsByClassName('headers')[0]
+
+  headers.innerHTML += '<button type="button" name="button">Show Artists</button>'
+
+  const button = document.querySelectorAll('button')[0]
+
+  button.addEventListener('click', bandInfo)
+}
+
+
+function bandInfo() {
+  const lisa = {
+    name: 'Lisa Loeb',
+    bio: 'Lisa Loeb is a singer-songwriter, producer, touring artist, author and philanthropist who started her career with the platinum-selling Number 1 hit song “Stay (I Missed You)” from the film Reality Bites. A trailblazing independent artist, Lisa was the first pop musician to have a Number 1 single while not signed to a recording contract. She followed that remarkable feat with the hit singles "Do You Sleep," "I Do," and "Let\'s Forget about It” and the albums “Cake and Pie” and “No Fairy Tale,” among others.',
+    picture: 'https://s-media-cache-ak0.pinimg.com/originals/9f/7f/c9/9f7fc9ec1b76ce4bcc6a25554bd71c02.jpg',
+    video: 'https://www.youtube.com/watch?v=9Z_H11F7WDI',
+    url: 'https://www.lisaloeb.com/'
+  }
+
+  const bandList = document.getElementsByClassName('band-list')[0]
+  const band = `<div class="band"><h3>${lisa.name}</h3><p>${lisa.bio}</p></div>`
+  bandList.innerHTML += band
+}
